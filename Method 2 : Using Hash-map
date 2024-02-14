@@ -1,0 +1,22 @@
+def changeArr(input1):
+ 
+    newArray = input1.copy()
+    newArray.sort()
+    ranks = {}
+    rank = 1
+     
+    for index in range(len(newArray)):
+        element = newArray[index];
+        if element not in ranks:
+            ranks[element] = rank
+            rank += 1
+         
+    for index in range(len(input1)):
+        element = input1[index]
+        input1[index] = ranks[input1[index]]
+ 
+# Driver Code
+arr = [100, 2, 70, 12 , 90]
+changeArr(arr)
+# Print the array elements
+print(arr)
